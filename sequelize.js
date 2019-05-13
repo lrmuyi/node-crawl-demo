@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const config = require('./config/db')
+const config = require('./config/index')
 
 //  创建sequelize实例
 const sequelize = new Sequelize(config.database, config.user, config.password, {
