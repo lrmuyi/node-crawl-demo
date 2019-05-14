@@ -1,16 +1,15 @@
-const defaultConfig = require("./config.default");
-const propConfig = require("./config.prop");
-const testConfig = require("./config.test");
+const defaultConfig = require("./default.config");
+const propConfig = require("./prop.config");
+const testConfig = require("./test.config");
 
 const fs = require("fs");
 var config = null;
 if (process.env.NODE_ENV === "test") {
   console.log(`Load ${testConfig}...`);
-  config = require(testConfig);
+  config = defaultConfig;
 } else {
   console.log(`Load ${defaultConfig}...`);
-  config = require(defaultConfig);
-  console.log(config)
+  config = defaultConfig;
   try {
     if (fs.statSync(propConfig).isFile()) {
       console.log(`Load ${propConfig}...`);
@@ -21,4 +20,4 @@ if (process.env.NODE_ENV === "test") {
   }
 }
 
-module.exports = config
+module.exports = config;

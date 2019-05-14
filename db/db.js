@@ -15,6 +15,7 @@ var sequelize = new Sequelize(
   {
     host: config.host,
     dialect: config.dialect,
+    timezone: '+08:00',
     pool: {
       min: 0,
       max: 5,
@@ -131,7 +132,6 @@ var exp = {
     }
   }
 };
-
 for (let type of TYPES) {
   exp[type] = Sequelize[type];
 }

@@ -20,7 +20,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon ./bin/www",
-    "seque": "node  ./start.js NODE_ENV=test",
+    "seque": "cross-env NODE_ENV=test node  ./db/start.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {},
@@ -44,6 +44,7 @@
     "cookie-parser": "~1.4.3",
     "cookie-signature": "^1.0.6",
     "core-util-is": "^1.0.2",
+    "cross-env": "^5.2.0",
     "dashdash": "^1.14.1",
     "debug": "~2.6.9",
     "delayed-stream": "^1.0.0",
