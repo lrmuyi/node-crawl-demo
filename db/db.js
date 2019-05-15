@@ -15,7 +15,6 @@ var sequelize = new Sequelize(
   {
     host: config.host,
     dialect: config.dialect,
-    timezone: '+08:00',
     pool: {
       min: 0,
       max: 5,

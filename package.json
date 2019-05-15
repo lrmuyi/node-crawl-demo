@@ -20,7 +20,8 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon ./bin/www",
-    "seque": "cross-env NODE_ENV=test node  ./db/start.js",
+    "initdb": "node ./db/init.db.js",
+    "seque": "cross-env NODE_ENV=test  node  ./db/start.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {},
@@ -88,6 +89,7 @@
     "mime": "^1.4.1",
     "mime-db": "^1.40.0",
     "mime-types": "^2.1.24",
+    "moment": "^2.24.0",
     "morgan": "~1.9.0",
     "ms": "^2.0.0",
     "negotiator": "^0.6.2",
