@@ -1,6 +1,6 @@
 const config = {
   dialect: "mariadb",
-  database: "test_db",
+  database: "node_crawl_test",
   username: "root",
   password: "F1n2g90",
   host: "47.97.216.140",

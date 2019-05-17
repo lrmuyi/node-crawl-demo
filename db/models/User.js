@@ -1,4 +1,4 @@
-const db = require("../db");
+const db = require("../model");
 
 module.exports = db.defineModel("user", {
   name: db.STRING(100),

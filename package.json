@@ -20,7 +20,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon ./bin/www",
-    "initdb": "node ./db/init.db.js",
+    "initdb": "cross-env NODE_ENV=test node ./db/init.db.js",
     "seque": "cross-env NODE_ENV=test  node  ./db/start.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
