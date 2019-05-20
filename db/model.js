@@ -1,12 +1,11 @@
 const Sequelize = require("sequelize");
-const dbConn =  require('./dbConn')
+const dbConn = require("./dbConn");
 const uuid = require("node-uuid");
 
 console.log("init sequelize...");
 function generateId() {
   return uuid.v4();
 }
-
 
 const ID_TYPE = Sequelize.STRING(50);
 
@@ -29,12 +28,12 @@ function defineModel(name, attributes) {
     primaryKey: true
   };
   attrs.createdAt = {
-    type: Sequelize.BIGINT,
-    allowNull: false
+    type: Sequelize.DATE,
+    allowNull: true
   };
   attrs.updatedAt = {
-    type: Sequelize.BIGINT,
-    allowNull: false
+    type: Sequelize.DATE,
+    allowNull: true
   };
   attrs.version = {
     type: Sequelize.BIGINT,
