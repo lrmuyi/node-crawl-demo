@@ -1,8 +1,8 @@
 /*
  * @Author: wers-mac 
  * @Date: 2019-05-26 14:44:40 
- * @Last Modified by:   wers-mac 
- * @Last Modified time: 2019-05-26 14:44:40 
+ * @Last Modified by: wers-mac
+ * @Last Modified time: 2019-05-27 00:11:32
  */
 
 
@@ -17,7 +17,7 @@ router.post("/api", function(req, res, next) {
   res.send({ code: 200, result: data });
 });
 
-router.get("/", function(req, res, next) {
+router.get("/html", function(req, res, next) {
   res.render("../views/movieForm.html");
 });
 module.exports = router;
