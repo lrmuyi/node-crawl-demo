@@ -5,8 +5,7 @@ const movieController = require("../db/controllers").movieController;
 
 // test
 router.use("/test", function(req, res, next) {
-  // res.send("movies test");
-  res.render('../views/moviesTest/index.html')
+  res.send("movies test");
 });
 
 /* GET home page. */
