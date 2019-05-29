@@ -57,6 +57,5 @@ export default {
 <style lang="scss" scoped>
 .menu-nav{
     margin-top: 20px;
-    height: 100vh;
 }
 </style>
