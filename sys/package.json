@@ -9,7 +9,13 @@
     "test:unit": "vue-cli-service test:unit",
     "start:server": "nodemon ./server/bin/www",
     "initdb": "cross-env NODE_ENV=test node ./server/db/init.db.js",
-    "seque": "cross-env NODE_ENV=test  node  ./server/db/start.js"
+    "seque": "cross-env NODE_ENV=test  node  ./server/db/start.js",
+    "commit": "git-cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-coventional-changelog"
+    }
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -28,8 +34,10 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
+    "commitizen": "^3.1.1",
     "cookie-parser": "^1.4.4",
     "cross-env": "^5.2.0",
+    "cz-conventional-changelog": "^2.1.0",
     "ejs": "^2.6.1",
     "element-ui": "^2.8.2",
     "eslint": "^5.16.0",
