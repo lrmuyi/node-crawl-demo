@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "start:client": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "start:server": "nodemon ./server/bin/www",
+    "initdb": "cross-env NODE_ENV=test node ./server/db/init.db.js",
+    "seque": "cross-env NODE_ENV=test  node  ./server/db/start.js"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -25,13 +28,22 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
+    "cookie-parser": "^1.4.4",
+    "cross-env": "^5.2.0",
+    "ejs": "^2.6.1",
     "element-ui": "^2.8.2",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "express": "^4.17.1",
     "lint-staged": "^8.1.5",
+    "mariadb": "^2.0.5",
+    "morgan": "^1.9.1",
+    "node-uuid": "^1.4.8",
+    "nodemon": "^1.19.1",
     "normalize.css": "^8.0.1",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
+    "sequelize": "^5.8.7",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
