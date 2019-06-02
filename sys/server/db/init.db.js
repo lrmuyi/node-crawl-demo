@@ -1,4 +1,4 @@
-const model = require("./exportModel");
+const model = require('./exportModel')
 // console.log("=====", model.sync.toLocaleString);
 
 const dbInit = async model => {
@@ -6,11 +6,11 @@ const dbInit = async model => {
     force: true,
     match: /_test$/
   }).then(res => {
-    console.log(res);
-    console.log("init db ok");
-  });
+    console.log(res)
+    console.log('init db ok')
+  })
 };
 
 (async () => {
-  await dbInit(model);
-})();
+  await dbInit(model)
+})()

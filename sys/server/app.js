@@ -4,6 +4,7 @@ var path = require('path')
 var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
+var cors = require('cors')
 var ejs = require('ejs')
 
 var index = require('./routes/index')
@@ -20,14 +21,25 @@ app.set('view engine', 'html')
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// var allowCrossDomain = function (req, res, next) {
+//   res.header('Access-Control-Allow-Origin', '*')// 自定义中间件，设置跨域需要的响应头。
+//   next()
+// }
+// app.use(allowCrossDomain)
+
+// app.use(cors({
+//   origin: ['*'], // 指定接收的地址
+//   methods: ['GET', 'POST', 'DELETE', 'PUT'] // 指定接收的请求类型
+//   // alloweHeaders: ['Content-Type', 'appliection/json'] // 指定header
+// }))
+app.use(cors())
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
-
 app.use('/', index)
-app.use('/movies', movies)
+app.use('/_api', movies)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

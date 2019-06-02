@@ -1,7 +1,10 @@
-const Movies = require("../exportModel").Movies;
-let now = Date.now();
+const Movies = require('../exportModel').Movies
+let now = Date.now()
+const result = (data) => {
+  return { code: 200, message: 'success', results: data }
+}
 module.exports = {
-  create(req, res) {
+  create (req, res) {
     return Movies.create({
       title: req.body.title,
       director: req.body.director,
@@ -16,38 +19,38 @@ module.exports = {
       updatedAt: req.body.updatedAt || now,
       version: req.body.version || 0
     })
-      .then(movies => res.status(201).send(movies))
-      .catch(error => res.status(400).send(error));
+      .then(data => res.status(200).send(result(data)))
+      .catch(error => res.status(400).send(error))
   },
-  list(req, res) {
+  list (req, res) {
     return Movies.findAll({
-      order: [
-        []
-        // [{ model: TodoItem, as: 'todoItems' }, 'createdAt', 'ASC'],
-      ]
+      // order: [
+      //   []
+      //   // [{ model: TodoItem, as: 'todoItems' }, 'createdAt', 'ASC'],
+      // ]
     })
-      .then(data => res.status(200).send(data))
-      .catch(error => res.status(400).send(error));
+      .then(data => res.status(200).send(result(data)))
+      .catch(error => res.status(400).send(error))
   },
-  retrieve(req, res) {
+  retrieve (req, res) {
     return Movies.findById(req.params.id, {})
-      .then(movies => {
-        if (!movies) {
+      .then(data => {
+        if (!data) {
           return res.status(404).send({
-            message: "Todo Not Found"
-          });
+            message: 'Todo Not Found'
+          })
         }
-        return res.status(200).send(movies);
+        return res.status(200).send(result(data))
       })
-      .catch(error => res.status(400).send(error));
+      .catch(error => res.status(400).send(error))
   },
-  update(req, res) {
+  update (req, res) {
     return Movies.findById(req.params.id, {})
       .then(movies => {
         if (!movies) {
           return res.status(404).send({
-            message: "Movies Not Found"
-          });
+            message: 'Movies Not Found'
+          })
         }
         return movies
           .update({
@@ -62,24 +65,24 @@ module.exports = {
             year_of_production: req.body.year_of_production
           })
           .then(() => res.status(200).send(movies))
-          .catch(error => res.status(400).send(error));
+          .catch(error => res.status(400).send(error))
       })
-      .catch(error => res.status(400).send(error));
+      .catch(error => res.status(400).send(error))
   },
 
-  destroy(req, res) {
+  destroy (req, res) {
     return Movies.findById(req.params.id)
       .then(movies => {
         if (!movies) {
           return res.status(400).send({
-            message: "movies Not Found"
-          });
+            message: 'movies Not Found'
+          })
         }
         return movies
           .destroy()
           .then(() => res.status(204).send())
-          .catch(error => res.status(400).send(error));
+          .catch(error => res.status(400).send(error))
       })
-      .catch(error => res.status(400).send(error));
+      .catch(error => res.status(400).send(error))
   }
-};
+}

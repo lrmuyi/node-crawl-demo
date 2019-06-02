@@ -9,23 +9,23 @@ router.use('/test', function (req, res, next) {
 })
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/movies/list/', function (req, res, next) {
   movieController.list(req, res)
 })
 
-router.get('/:id', function (req, res, next) {
+router.get('/movies/list/:id', function (req, res, next) {
   movieController.retrieve(req, res)
 })
 
-router.post('/', function (req, res, next) {
+router.post('/movies/item/', function (req, res, next) {
   movieController.create(req, res)
 })
 
-router.delete('/:id', function (req, res, next) {
+router.delete('/movies/list/:ids', function (req, res, next) {
   movieController.destroy(req, res)
 })
 
-router.put('/:id', function (req, res, next) {
+router.put('/movies/item/:id', function (req, res, next) {
   movieController.update(req, res)
 })
 

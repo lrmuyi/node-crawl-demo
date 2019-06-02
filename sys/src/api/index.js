@@ -4,9 +4,15 @@ import handleRequest from './request'
 let api = {}
 
 // 登录
-api.Login = data => {
-  return handleRequest('/iam/auth/common/server/user/login/', data)({
-    method: 'get'
+api.getMoviesList = () => {
+  return handleRequest('/_api/movies/list/')({
+    method: 'GET'
+  })
+}
+
+api.postMovies = (data) => {
+  return handleRequest('/_api/movies/item/', data)({
+    method: 'POST'
   })
 }
 

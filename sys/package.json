@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start:client": "vue-cli-service serve",
+    "start:client": "vue-cli-service serve --dev",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
@@ -34,8 +34,10 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
+    "cheerio": "^1.0.0-rc.3",
     "commitizen": "^3.1.1",
     "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
     "cross-env": "^5.2.0",
     "cz-conventional-changelog": "^2.1.0",
     "ejs": "^2.6.1",
@@ -52,6 +54,7 @@
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
     "sequelize": "^5.8.7",
+    "superagent": "^5.0.5",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
