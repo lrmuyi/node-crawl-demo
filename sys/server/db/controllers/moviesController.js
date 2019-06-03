@@ -1,6 +1,6 @@
 const Movies = require('../exportModel').Movies
 let now = Date.now()
-const result = (data) => {
+const result = data => {
   return { code: 200, message: 'success', results: data }
 }
 module.exports = {
